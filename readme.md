@@ -1,0 +1,2 @@
+-   ERD for memeBook
+-   https://lucid.app/lucidchart/b2eff632-8056-4067-a5e9-19022a8801fc/edit?viewport_loc=-432%2C-20%2C2568%2C1368%2C0_0&invitationId=inv_fab9e297-f7f2-4605-a0e1-56ab19805b63
