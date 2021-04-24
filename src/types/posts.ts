@@ -1,9 +1,6 @@
-import { Document } from "mongoose";
+import { Document } from 'mongoose'
 
 export interface post extends Document {
-    meme: string;
-    photo: ArrayBuffer;
-}
-export interface UploadedFile {
-    path: string;
+  meme: string
+  photo: ArrayBuffer
 }
