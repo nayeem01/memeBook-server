@@ -9,6 +9,12 @@ const PostSchema: Schema = new Schema(
     photo: {
       type: String,
     },
+    likes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Like',
+      },
+    ],
   },
   { timestamps: true }
 )

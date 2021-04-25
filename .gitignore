@@ -1,4 +1,4 @@
 # dependencies
 /node_modules
 .env
-/endpoints.config.ts
+endpoints.config.ts
