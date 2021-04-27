@@ -3,6 +3,10 @@ import { like } from '../types/likes'
 
 const LikeSchema: Schema = new Schema(
   {
+    userID: {
+      type: String,
+      required: true,
+    },
     count: {
       type: Number,
     },

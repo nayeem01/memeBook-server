@@ -1,11 +1,10 @@
-import { RequestHandler, RequestParamHandler } from 'express'
+import { RequestHandler } from 'express'
 import Posts from '../models/Posts'
-import Likes from '../models/Likes'
-import { post } from '../types/posts'
 
 export const addPost: RequestHandler = async (req, res, next) => {
   try {
     const post = await Posts.create({
+      userID: req.user._id,
       meme: req.body.meme,
       photo: req.file.path,
     })
@@ -39,7 +38,6 @@ export const getPost: RequestHandler = async (req, res, next) => {
 export const updatePost: RequestHandler = async (req, res, next) => {
   try {
     const { id } = req.params
-    console.log(req.likeOb)
     const post = await Posts.findByIdAndUpdate(
       id,
       {

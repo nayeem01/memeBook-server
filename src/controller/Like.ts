@@ -11,6 +11,7 @@ declare global {
 export const addLike: RequestHandler = async (req, res, next) => {
   try {
     const like = await Likes.create({
+      userID: req.user._id,
       count: req.body.count,
     })
     req.likeOb = like
