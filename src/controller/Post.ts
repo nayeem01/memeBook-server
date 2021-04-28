@@ -1,5 +1,6 @@
 import { RequestHandler } from 'express'
 import Posts from '../models/Posts'
+import { client } from '../config/redis.config'
 
 export const addPost: RequestHandler = async (req, res, next) => {
   try {
@@ -18,6 +19,7 @@ export const addPost: RequestHandler = async (req, res, next) => {
 }
 
 export const getPost: RequestHandler = async (req, res, next) => {
+  const haskey = 'post'
   try {
     const posts = await Posts.find()
       .populate('likes', 'count')
@@ -28,6 +30,8 @@ export const getPost: RequestHandler = async (req, res, next) => {
         message: 'no data found',
       })
     }
+    console.log(posts)
+    client.setex(haskey, 3600, JSON.stringify(posts))
     res.status(200).json({
       success: true,
       data: posts,

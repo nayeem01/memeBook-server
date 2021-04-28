@@ -10,6 +10,7 @@ import auth from './routes/auth'
 import comment from './routes/comment'
 
 const app = express()
+const PORT = endpoint.PORT || 5000
 
 connectDB()
 app.use(morgan('dev'))
@@ -21,5 +22,5 @@ app.use('/api', post)
 app.use('/api', like)
 app.use('/api', auth)
 app.use('/api', comment)
-const PORT = endpoint.PORT
+
 app.listen(PORT, () => console.log(`server is runnig on ${PORT}`))
