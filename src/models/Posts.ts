@@ -1,6 +1,7 @@
 import { model, Schema } from 'mongoose'
 import { post } from '../types/posts'
-const PostSchema: Schema = new Schema(
+
+const PostSchema = new Schema<post>(
   {
     userID: {
       type: String,
@@ -19,7 +20,18 @@ const PostSchema: Schema = new Schema(
         ref: 'Like',
       },
     ],
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Comment',
+      },
+    ],
   },
   { timestamps: true }
 )
+
+PostSchema.methods.matchID = async function (enteredUserID) {
+  return (await enteredUserID) == this.userID
+}
+
 export default model<post>('Post', PostSchema)

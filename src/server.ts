@@ -7,6 +7,8 @@ import endpoint from './config/endpoints.config'
 import post from './routes/post'
 import like from './routes/like'
 import auth from './routes/auth'
+import comment from './routes/comment'
+
 const app = express()
 
 connectDB()
@@ -18,5 +20,6 @@ app.use(json())
 app.use('/api', post)
 app.use('/api', like)
 app.use('/api', auth)
+app.use('/api', comment)
 const PORT = endpoint.PORT
 app.listen(PORT, () => console.log(`server is runnig on ${PORT}`))
