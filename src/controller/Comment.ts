@@ -39,3 +39,23 @@ export const getComments: RequestHandler = async (req, res, next) => {
     next(error)
   }
 }
+
+export const updateCommentInfo: RequestHandler = async (req, res, next) => {
+  try {
+    const { id } = req.params
+    const comment = await Comments.findByIdAndUpdate(
+      id,
+      {
+        comment: req.body.comment,
+      },
+      { new: true, useFindAndModify: false }
+    )
+
+    res.status(200).json({
+      success: true,
+      data: comment,
+    })
+  } catch (error) {
+    next(error)
+  }
+}

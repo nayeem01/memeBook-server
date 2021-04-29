@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const Like_1 = require("../controller/Like");
+const Post_1 = require("../controller/Post");
+const authorization_1 = require("../middleware/authorization");
+const router = express_1.Router();
+router.post('/addLike/:id', authorization_1.protection, Like_1.addLike, Post_1.updatePostLike);
+router.get('/getLikes', authorization_1.protection, Like_1.getLikes);
+exports.default = router;

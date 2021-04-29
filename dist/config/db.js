@@ -5,11 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const endpoints_config_1 = __importDefault(require("./endpoints.config"));
-// declare var process: {
-//     env: {
-//         NODE_ENV: string;
-//     };"mongodb+srv://admin:admin@cluster0.co4qm.mongodb.net/test"
-// };
 const connectDB = async () => {
     const conn = await mongoose_1.default.connect(endpoints_config_1.default.URL, {
         useCreateIndex: true,

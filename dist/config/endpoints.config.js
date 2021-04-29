@@ -18,12 +18,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var _a, _b;
+var _a, _b, _c, _d, _e, _f;
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv = __importStar(require("dotenv"));
 const path_1 = require("path");
-dotenv.config({ path: path_1.resolve(__dirname, "./config.env") });
+dotenv.config({ path: path_1.resolve(__dirname, './config.env') });
 exports.default = {
-    URL: (_a = process.env.URL) !== null && _a !== void 0 ? _a : "",
-    PORT: (_b = process.env.PORT) !== null && _b !== void 0 ? _b : "",
+    URL: (_a = process.env.URL) !== null && _a !== void 0 ? _a : '',
+    PORT: (_b = process.env.PORT) !== null && _b !== void 0 ? _b : '',
+    REDIS_PORT: (_c = process.env.REDIS_PORT) !== null && _c !== void 0 ? _c : '',
+    JWT_KEY: (_d = process.env.JWT_SECRET) !== null && _d !== void 0 ? _d : '',
+    JWT_EXPIRE: (_e = process.env.JWT_EXPIRE) !== null && _e !== void 0 ? _e : '',
+    JWT_COOKIE_EXPIRE: (_f = process.env.JWT_COOKIE_EXPIRE) !== null && _f !== void 0 ? _f : '',
 };
