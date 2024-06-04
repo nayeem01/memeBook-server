@@ -2,3 +2,5 @@
 /node_modules
 .env
 endpoints.config.ts
+config.env
+uploads

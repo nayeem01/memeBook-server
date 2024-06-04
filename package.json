@@ -16,6 +16,7 @@
         "@types/jsonwebtoken": "^8.5.1",
         "@types/morgan": "^1.9.2",
         "@types/node": "^14.14.41",
+        "@types/redis": "^4.0.11",
         "nodemon": "^2.0.7",
         "ts-node": "^9.1.1",
         "typescript": "^4.2.4"
@@ -23,7 +24,6 @@
     "dependencies": {
         "@types/cookie-parser": "^1.4.2",
         "@types/multer": "^1.4.5",
-        "@types/redis": "^2.8.28",
         "bcryptjs": "^2.4.3",
         "body-parser": "^1.19.0",
         "cookie-parser": "^1.4.5",
