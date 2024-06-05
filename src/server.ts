@@ -7,10 +7,10 @@ import cookieParser from 'cookie-parser'
 import connectDB from './config/db'
 import endpoint from './config/endpoints.config'
 
-import post from './routes/post'
-import like from './routes/like'
 import auth from './routes/auth'
-import comment from './routes/comment'
+import post from './routes/post'
+// import like from './routes/like'
+// import comment from './routes/comment'
 
 const app = express()
 const PORT = endpoint.PORT || 5000
@@ -22,9 +22,9 @@ app.use(cookieParser())
 app.use(json())
 app.use(cors())
 
+app.use('/api', auth)
 app.use('/api', post)
 // app.use('/api', like)
-// app.use('/api', auth)
 // app.use('/api', comment)
 
 app.listen(PORT, () => console.log(`server is runnig on ${PORT}`))
