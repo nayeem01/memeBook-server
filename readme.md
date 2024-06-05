@@ -1,7 +1,8 @@
-MemeBook Server
+## MemeBook Server
 
-Tech stack: TypeSrcipt, MongoDB, Express
-Backend Features:
+**Tech stack**: TypeSrcipt, MongoDB, Express
+
+**Backend Features**:
 
 - [x] create delete update remove post API
 - [ ] create delete update remove likes API
@@ -12,8 +13,12 @@ Backend Features:
 - [ ] Dockerize whole process
 - [ ] Add RabbitMQ
 
-- ER Diagram for memeBook
-  ![ERD](./diagrams/memeBook.png)
-- UML Class Diagram
-  ![UML](./diagrams/UMLClass_diagram_memeBook.png)
+## ER Diagram for memeBook
+
+![ERD](./diagrams/memeBook.png)
+
+## UML Class Diagram
+
+![UML](./diagrams/UMLClass_diagram_memeBook.png)
+
 - postman Documentation -
