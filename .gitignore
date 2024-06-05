@@ -4,3 +4,5 @@
 endpoints.config.ts
 config.env
 uploads
+
+package-lock.json
