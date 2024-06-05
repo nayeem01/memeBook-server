@@ -13,6 +13,7 @@ const PostSchema = new Schema<post>(
     },
     photo: {
       type: String,
+      required: true,
     },
     likes: [
       {

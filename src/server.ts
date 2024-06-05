@@ -20,6 +20,7 @@ app.use(morgan('combined'))
 app.use('/uploads', express.static('uploads'))
 app.use(cookieParser())
 app.use(json())
+app.use(cors())
 
 app.use('/api', post)
 // app.use('/api', like)
