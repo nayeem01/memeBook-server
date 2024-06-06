@@ -40,45 +40,45 @@ export const getPost: RequestHandler = async (req, res, next) => {
   }
 }
 
-export const updatePostLike: RequestHandler = async (req, res, next) => {
-  try {
-    const { id } = req.params
-    const post = await Posts.findByIdAndUpdate(
-      id,
-      {
-        $push: { likes: req.likeOb },
-      },
-      { new: true, useFindAndModify: false }
-    )
+// export const updatePostLike: RequestHandler = async (req, res, next) => {
+//   try {
+//     const { id } = req.params
+//     const post = await Posts.findByIdAndUpdate(
+//       id,
+//       {
+//         $push: { likes: req.likeOb },
+//       },
+//       { new: true, useFindAndModify: false }
+//     )
 
-    res.status(200).json({
-      success: true,
-      data: post,
-    })
-  } catch (error) {
-    next(error)
-  }
-}
+//     res.status(200).json({
+//       success: true,
+//       data: post,
+//     })
+//   } catch (error) {
+//     next(error)
+//   }
+// }
 
-export const updatePostComment: RequestHandler = async (req, res, next) => {
-  try {
-    const { id } = req.params
-    const post = await Posts.findByIdAndUpdate(
-      id,
-      {
-        $push: { comments: req.commentOb },
-      },
-      { new: true, useFindAndModify: false }
-    )
+// export const updatePostComment: RequestHandler = async (req, res, next) => {
+//   try {
+//     const { id } = req.params
+//     const post = await Posts.findByIdAndUpdate(
+//       id,
+//       {
+//         $push: { comments: req.commentOb },
+//       },
+//       { new: true, useFindAndModify: false }
+//     )
 
-    res.status(200).json({
-      success: true,
-      data: post,
-    })
-  } catch (error) {
-    next(error)
-  }
-}
+//     res.status(200).json({
+//       success: true,
+//       data: post,
+//     })
+//   } catch (error) {
+//     next(error)
+//   }
+// }
 
 export const updatePostInfo: RequestHandler = async (req, res, next) => {
   try {

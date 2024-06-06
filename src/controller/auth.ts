@@ -55,7 +55,7 @@ export const logout: RequestHandler = async (req, res, next) => {
   })
 }
 
-const sendTokenResponse = (user: any, statusCode: number, res: Response) => {
+const sendTokenResponse = (user: user, statusCode: number, res: Response) => {
   const token = user.getSignedJwtToken()
   const options = {
     expires: new Date(

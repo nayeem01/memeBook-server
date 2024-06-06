@@ -1,10 +1,10 @@
 ## MemeBook Server
 
-**Tech stack**: TypeSrcipt, MongoDB, Express
+**Tech stack**: TypeSrcipt, MongoDB, Express, Node.js, Docker
 
 **Backend Features**:
 
-- [x] create delete update remove post API
+- [x] create delete update remove posts API
 - [ ] create delete update remove likes API
 - [ ] create delete update remove comments API
 - [ ] Login and Register API
@@ -21,4 +21,4 @@
 
 ![UML](./diagrams/UMLClass_diagram_memeBook.png)
 
-- postman Documentation -
+- Postman Documentation -

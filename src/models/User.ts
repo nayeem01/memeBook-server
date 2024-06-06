@@ -19,6 +19,7 @@ const UserSchema = new Schema<user>(
     },
     picture: {
       type: String,
+      default: '../static/no-photo.jpeg',
     },
     resetPasswordToken: String,
     restPasswordExpire: Date,
@@ -34,14 +35,14 @@ UserSchema.pre('save', async function (next) {
   this.password = await bcrypt.hash(this.password, salt)
 })
 
+UserSchema.methods.matchPassword = async function (enteredPassword: string) {
+  return await bcrypt.compare(enteredPassword, this.password)
+}
+
 UserSchema.methods.getSignedJwtToken = function () {
   return jwt.sign({ id: this._id }, endpoint.JWT_KEY, {
     expiresIn: endpoint.JWT_EXPIRE,
   })
-}
-
-UserSchema.methods.matchPassword = async function (enteredPassword) {
-  return await bcrypt.compare(enteredPassword, this.password)
 }
 
 export default model<user>('User', UserSchema)
