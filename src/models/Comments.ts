@@ -3,8 +3,9 @@ import { comment } from '../types/comments'
 
 const CommentSchema = new Schema<comment>(
   {
-    userID: {
-      type: String,
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
       required: true,
     },
     comment: {
@@ -15,8 +16,10 @@ const CommentSchema = new Schema<comment>(
   { timestamps: true }
 )
 
-CommentSchema.methods.matchID = async function (enteredUserID) {
-  return (await enteredUserID) == this.userID
+CommentSchema.methods.matchID = async function (
+  enteredUserID: Schema.Types.ObjectId
+) {
+  return (await enteredUserID) == this.user
 }
 
 export default model<comment>('Comment', CommentSchema)

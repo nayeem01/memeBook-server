@@ -4,13 +4,14 @@
 
 **Backend Features**:
 
-- [x] create delete update remove posts API
-- [ ] create delete update remove likes API
-- [ ] create delete update remove comments API
+- [x] (create delete update remove) posts API
+- [ ] (create delete update remove) likes API
+- [x] (create delete update remove) comments API
 - [x] Login and Register API
 - [x] JWT Authentication
 - [ ] Radis cache
 - [ ] Dockerize whole process
+- [ ] CI/CD Github Workflow
 - [ ] Add RabbitMQ
 
 ## ER Diagram for memeBook

@@ -9,8 +9,8 @@ import endpoint from './config/endpoints.config'
 
 import auth from './routes/auth'
 import post from './routes/post'
+import comment from './routes/comment'
 // import like from './routes/like'
-// import comment from './routes/comment'
 
 const app = express()
 const PORT = endpoint.PORT || 5000
@@ -24,7 +24,7 @@ app.use(cors())
 
 app.use('/api', auth)
 app.use('/api', post)
+app.use('/api', comment)
 // app.use('/api', like)
-// app.use('/api', comment)
 
 app.listen(PORT, () => console.log(`server is runnig on ${PORT}`))

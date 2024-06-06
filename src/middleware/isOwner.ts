@@ -8,7 +8,7 @@ export const isOwnerOFPost: RequestHandler = async (req, res, next) => {
   if (
     post !== null &&
     req.user !== undefined &&
-    (await post.matchID(req.user._id as string))
+    post.user.toString() === (req.user._id as string).toString()
   ) {
     next()
   } else {
@@ -19,15 +19,19 @@ export const isOwnerOFPost: RequestHandler = async (req, res, next) => {
   }
 }
 
-// export const isOwnerOfComment: RequestHandler = async (req, res, next) => {
-//   const comment = await Comment.findById(req.params.id)
+export const isOwnerOfComment: RequestHandler = async (req, res, next) => {
+  const comment = await Comment.findById(req.params.id)
 
-//   if (comment !== null && comment.matchID(req.user._id)) {
-//     next()
-//   } else {
-//     res.status(401).json({
-//       success: true,
-//       message: 'you are not the owner of this post',
-//     })
-//   }
-// }
+  if (
+    comment !== null &&
+    req.user !== undefined &&
+    comment.user.toString() === (req.user._id as string).toString()
+  ) {
+    next()
+  } else {
+    res.status(401).json({
+      success: false,
+      message: 'you are not the owner of this comment',
+    })
+  }
+}

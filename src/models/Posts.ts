@@ -1,10 +1,12 @@
 import { model, Schema } from 'mongoose'
 import { post } from '../types/posts'
+import CommentSchema from './Comments'
 
 const PostSchema = new Schema<post>(
   {
-    userID: {
-      type: String,
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
       required: true,
     },
     meme: {
@@ -24,7 +26,7 @@ const PostSchema = new Schema<post>(
     comments: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Comment',
+        ref: CommentSchema,
       },
     ],
   },

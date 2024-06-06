@@ -1,7 +1,7 @@
-import { Document } from 'mongoose'
+import { Document, Schema } from 'mongoose'
 
 export interface post extends Document {
-  userID: string
+  user: Schema.Types.ObjectId | string
   meme: string
   photo: ArrayBuffer
   likes: ArrayBuffer
