@@ -7,8 +7,8 @@
 - [x] create delete update remove posts API
 - [ ] create delete update remove likes API
 - [ ] create delete update remove comments API
-- [ ] Login and Register API
-- [ ] JWT Authentication
+- [x] Login and Register API
+- [x] JWT Authentication
 - [ ] Radis cache
 - [ ] Dockerize whole process
 - [ ] Add RabbitMQ
