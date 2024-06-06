@@ -5,7 +5,7 @@ import Posts from '../models/Posts'
 export const addPost: RequestHandler = async (req, res, next) => {
   try {
     const post = await Posts.create({
-      // userID: req.user._id,
+      userID: req.user?._id,
       meme: req.body.meme,
       photo: req.file?.path,
     })

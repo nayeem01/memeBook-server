@@ -2,15 +2,6 @@ import jwt from 'jsonwebtoken'
 import User from '../models/User'
 import { RequestHandler } from 'express'
 import endpoint from '../config/endpoints.config'
-import { user } from '../types/user'
-
-declare global {
-  namespace Express {
-    interface Request {
-      user: user
-    }
-  }
-}
 
 // Protect routes
 export const protection: RequestHandler = async (req, res, next) => {

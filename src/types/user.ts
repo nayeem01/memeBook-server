@@ -10,3 +10,11 @@ export interface user extends Document {
   matchPassword: (pw: string) => Promise<boolean>
   getSignedJwtToken(): string
 }
+
+declare global {
+  namespace Express {
+    interface Request {
+      user?: user
+    }
+  }
+}

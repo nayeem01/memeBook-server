@@ -3,10 +3,10 @@ import { post } from '../types/posts'
 
 const PostSchema = new Schema<post>(
   {
-    // userID: {
-    //   type: String,
-    //   required: true,
-    // },
+    userID: {
+      type: String,
+      required: true,
+    },
     meme: {
       type: String,
       required: true,
@@ -31,8 +31,8 @@ const PostSchema = new Schema<post>(
   { timestamps: true }
 )
 
-// PostSchema.methods.matchID = async function (enteredUserID: string) {
-//   return (await enteredUserID) == this.userID
-// }
+PostSchema.methods.matchID = async function (enteredUserID: string) {
+  return (await enteredUserID) == this.userID
+}
 
 export default model<post>('Post', PostSchema)
