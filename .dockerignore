@@ -15,5 +15,8 @@ coverage
 
 build/Release
 
+.git
+
+dist
 npm-debug.log
 node_modules

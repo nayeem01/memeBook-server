@@ -30,7 +30,7 @@ export const getPost: RequestHandler = async (req, res, next) => {
       })
     }
 
-    await redis.set('posts', JSON.stringify(posts), 'EX', 30)
+    await redis.set('posts', JSON.stringify(posts), 'EX', 30) // 30 seconds
 
     res.status(200).json({
       success: true,

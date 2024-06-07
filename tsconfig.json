@@ -5,15 +5,11 @@
     "strict": true,
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "noEmit": true,
-
-    "outDir": "dist",
-
+    "outDir": "./dist",
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitAny": true,
-
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

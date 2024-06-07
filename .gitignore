@@ -6,3 +6,4 @@ config.env
 uploads
 
 package-lock.json
+dist
