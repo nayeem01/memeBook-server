@@ -1,6 +1,8 @@
 import { RequestHandler } from 'express'
 import Posts from '../models/Posts'
-// import { client } from '../config/redis.config'
+import Redis from 'ioredis'
+
+const redis = new Redis()
 
 export const addPost: RequestHandler = async (req, res, next) => {
   try {
@@ -27,8 +29,9 @@ export const getPost: RequestHandler = async (req, res, next) => {
         message: 'no data found',
       })
     }
-    // console.log(posts)
-    // client.setex(haskey, 3600, JSON.stringify(posts))
+
+    await redis.set('posts', JSON.stringify(posts), 'EX', 30)
+
     res.status(200).json({
       success: true,
       data: posts,

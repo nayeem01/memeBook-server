@@ -1,6 +1,6 @@
 ## MemeBook Server
 
-**Tech stack**: TypeSrcipt, MongoDB, Express, Node.js, Docker
+**Tech stack**: TypeSrcipt, MongoDB, Express, Node.js, Docker, Redis
 
 **Backend Features**:
 
@@ -9,8 +9,8 @@
 - [x] (create delete update remove) comments API
 - [x] Login and Register API
 - [x] JWT Authentication
-- [ ] Radis cache
-- [ ] Dockerize whole process
+- [ ] Redis cache
+- [ ] Dockerize whole Project
 - [ ] CI/CD Github Workflow
 - [ ] Add RabbitMQ
 

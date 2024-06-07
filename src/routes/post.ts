@@ -9,7 +9,7 @@ import {
 import multer from 'multer'
 import { protection } from '../middleware/authorization'
 import { isOwnerOFPost } from '../middleware/isOwner'
-// import { cache } from '../middleware/cache'
+import { cache } from '../middleware/redis.cache'
 const router = Router()
 
 const fileStorage = multer.diskStorage({
@@ -23,7 +23,7 @@ const fileStorage = multer.diskStorage({
 
 const upload = multer({ storage: fileStorage })
 
-router.get('/getPost', protection, getPost)
+router.get('/getPost', protection, cache, getPost)
 router.post('/post', upload.single('photo'), protection, addPost)
 router.put('/updatePost/:id', updatePostInfo)
 router.put(
