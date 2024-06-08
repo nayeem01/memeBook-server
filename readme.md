@@ -11,7 +11,7 @@
 - [x] JWT Authentication
 - [x] Redis cache
 - [x] Dockerize whole Project
-- [ ] CI/CD Github Workflow
+- [x] CI/CD Github Workflow
 - [ ] Add RabbitMQ
 
 ## ER Diagram for memeBook
