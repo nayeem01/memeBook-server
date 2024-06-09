@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-RUN if [ -f .env ]; then cp .env .env; fi
+# RUN if [ -f .env ]; then cp .env .env; fi
 
 RUN apt-get update && apt-get install -y redis-server
 

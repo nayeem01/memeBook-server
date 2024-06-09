@@ -1,4 +1,7 @@
 import { Router } from 'express'
+import path from 'path'
+import fs from 'fs'
+
 import {
   addPost,
   getPost,
@@ -6,26 +9,35 @@ import {
   deletePost,
   updatePostPhoto,
 } from '../controller/Post'
-import multer from 'multer'
+import multer, { DiskStorageOptions } from 'multer'
 import { protection } from '../middleware/authorization'
 import { isOwnerOFPost } from '../middleware/isOwner'
 import { cache } from '../middleware/redis.cache'
 const router = Router()
 
-const fileStorage = multer.diskStorage({
+const uploadDir = path.join(__dirname, '../../uploads/')
+
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true })
+}
+const fileStorage: DiskStorageOptions = {
   destination: (req, file, cb) => {
-    cb(null, './uploads/')
+    cb(null, uploadDir)
   },
   filename: (req, file, cb) => {
-    cb(null, new Date().toISOString() + '-' + file.originalname)
+    const uniqueSuffix = `${Date.now()}-${file.originalname.replace(
+      /[^a-zA-Z0-9.]/g,
+      '_'
+    )}`
+    cb(null, uniqueSuffix)
   },
-})
+}
 
-const upload = multer({ storage: fileStorage })
+const upload = multer({ storage: multer.diskStorage(fileStorage) })
 
 router.get('/getPost', protection, cache, getPost)
 router.post('/post', upload.single('photo'), protection, addPost)
-router.put('/updatePost/:id', updatePostInfo)
+router.put('/updatePostInfo/:id', updatePostInfo)
 router.put(
   '/updatePostPhoto/:id',
   upload.single('photo'),
