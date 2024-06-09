@@ -10,7 +10,7 @@
 - [x] Login and Register API
 - [x] JWT Authentication
 - [x] Redis cache
-- [x] Dockerize whole Project
+- [x] Dockerize whole Project with Docker deployment
 - [x] CI/CD Github Workflow
 - [ ] Add RabbitMQ
 
