@@ -10,8 +10,8 @@
 - [x] Login and Register API
 - [x] JWT Authentication
 - [x] Redis cache
-- [x] Dockerize whole Project with Docker deployment
-- [x] CI/CD Github Workflow
+- [x] Dockerize the whole Project
+- [x] CI/CD Github Workflow with Docker Hub deployment
 - [ ] Add RabbitMQ
 
 ## ER Diagram for memeBook
