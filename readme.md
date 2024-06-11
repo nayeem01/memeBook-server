@@ -7,6 +7,7 @@
 - [x] (create delete update remove) posts API
 - [ ] (create delete update remove) likes API
 - [x] (create delete update remove) comments API
+- [ ] Chat application with Socket.io
 - [x] Login and Register API
 - [x] JWT Authentication
 - [x] Redis cache
