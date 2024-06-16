@@ -3,6 +3,9 @@ import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
 
+import http from 'http'
+import { Server } from 'socket.io'
+
 import cookieParser from 'cookie-parser'
 import connectDB from './config/db'
 import endpoint from './config/endpoints.config'
@@ -14,6 +17,16 @@ import comment from './routes/comment'
 
 const app = express()
 const PORT = endpoint.PORT || 5000
+
+const server = http.createServer(app)
+const io = new Server(server, { cors: { origin: '*' } })
+
+io.on('connection', (socket) => {
+  console.log('a user connected')
+  socket.on('disconnect', () => {
+    console.log('user disconnected')
+  })
+})
 
 connectDB()
 app.use(morgan('combined'))
@@ -27,4 +40,4 @@ app.use('/api', post)
 app.use('/api', comment)
 // app.use('/api', like)
 
-app.listen(PORT, () => console.log(`server is runnig on ${PORT}`))
+server.listen(PORT, () => console.log(`server is runnig on ${PORT}`))
