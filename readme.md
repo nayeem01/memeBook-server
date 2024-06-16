@@ -14,7 +14,7 @@
 
 ## Architecture
 
-![ERD](./diagrams/arc-memebook.png)
+![ERD](./diagrams/arc-memebook-2.png)
 
 ## ER Diagram for memeBook
 
