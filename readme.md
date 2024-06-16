@@ -5,14 +5,16 @@
 **Backend Features**:
 
 - [x] (create delete update remove) posts API
-- [ ] (create delete update remove) likes API
 - [x] (create delete update remove) comments API
 - [x] Login and Register API
 - [x] JWT Authentication
 - [x] Redis cache
 - [x] Dockerize the whole Project
 - [x] CI/CD Github Workflow with Docker Hub deployment
-- [ ] Add RabbitMQ
+
+## Architecture
+
+![ERD](./diagrams/arc-memebook.png)
 
 ## ER Diagram for memeBook
 
