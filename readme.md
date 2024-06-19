@@ -11,6 +11,7 @@
 - [x] Redis cache
 - [x] Dockerize the whole Project
 - [x] CI/CD Github Workflow with Docker Hub deployment
+- [x] Server Monitoring with Grafana, Prometheus and Loki
 
 ## Architecture
 

@@ -10,6 +10,7 @@ import endpoint from './config/endpoints.config'
 import auth from './routes/auth'
 import post from './routes/post'
 import comment from './routes/comment'
+import metrics from './routes/metrics'
 // import like from './routes/like'
 
 const app = express()
@@ -27,4 +28,6 @@ app.use('/api', post)
 app.use('/api', comment)
 // app.use('/api', like)
 
-app.listen(PORT, () => console.log(`server is runnig on ${PORT}`))
+app.use('', metrics)
+
+app.listen(PORT, () => console.log(`server is running on ${PORT}`))
