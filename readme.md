@@ -12,10 +12,15 @@
 - [x] Dockerize the whole Project
 - [x] CI/CD Github Workflow with Docker Hub deployment
 - [x] Server Monitoring with Grafana, Prometheus and Loki
+- [ ] Cloud Infrastructure with terraform and Google Cloud
 
 ## Architecture
 
 ![ERD](./diagrams/arc-memebook-2.png)
+
+## Grafana Dashboard
+
+![ERD](./graphana-gif/Graphana_memebook-2.gif)
 
 ## ER Diagram for memeBook
 
