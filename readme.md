@@ -4,14 +4,14 @@
 
 **Backend Features**:
 
-- [x] (create delete update remove) posts API
-- [x] (create delete update remove) comments API
+- [x] (create read update delete) posts API
+- [x] (create read update delete) comments API
 - [x] Login and Register API
 - [x] JWT Authentication
 - [x] Redis cache
 - [x] Dockerize the whole Project
 - [x] CI/CD Github Workflow with Docker Hub deployment
-- [x] Server Monitoring with Grafana, Prometheus and Loki
+- [x] Server Monitoring with Grafana and Prometheus
 - [ ] Cloud Infrastructure with terraform and Google Cloud
 
 ## Architecture
